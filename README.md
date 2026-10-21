@@ -7,8 +7,6 @@ A machine learning project that uses **DVC (Data Version Control)** to build, re
 
 This diagram illustrates the end-to-end machine learning workflow, from raw data to model evaluation.
 
-![ML Pipeline Architecture](docs/images/ml-pipeline-architecture.png)
-
 ### 2. DVC Workflow
 
 DVC tracks pipeline stages, dependencies, metrics, and model artifacts, while Git tracks source code and pipeline configuration.
@@ -103,8 +101,8 @@ mlops-dvc/
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repository-url>
-cd mlops-dvc
+git clone [<your-repository-url>](https://github.com/SubhasishElixor-HQ/DVC-MLOops.git)
+cd DVC-MLOops
 ```
 
 ### 2. Initialize the Python Project
