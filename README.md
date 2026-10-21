@@ -1,6 +1,59 @@
 # Build & Track ML Pipeline with DVC
 
 A machine learning project that uses **DVC (Data Version Control)** to build, reproduce, visualize, and track an ML pipeline. DVC helps maintain reproducibility by defining pipeline stages, tracking dependencies, and recording evaluation metrics.
+## 🖼️ Project Architecture
+
+### 1. ML Pipeline Architecture
+
+This diagram illustrates the end-to-end machine learning workflow, from raw data to model evaluation.
+
+![ML Pipeline Architecture](docs/images/ml-pipeline-architecture.png)
+
+### 2. DVC Workflow
+
+DVC tracks pipeline stages, dependencies, metrics, and model artifacts, while Git tracks source code and pipeline configuration.
+
+```mermaid
+flowchart TD
+    A[Raw Dataset] --> B[Data Preprocessing]
+    B --> C[Feature Engineering]
+    C --> D[Model Training]
+    D --> E[Model Evaluation]
+    E --> F[Metrics Report]
+
+    G[dvc.yaml] -. defines stages .-> B
+    G -. defines stages .-> D
+    G -. defines stages .-> E
+
+    H[dvc repro] --> I[Execute Required Stages]
+    I --> B
+
+    J[Git] --> K[Track Code and Pipeline]
+    L[DVC Cache / Remote] --> M[Store Dataset and Model Artifacts]
+```
+
+### 3. Pipeline Execution Workflow
+
+```mermaid
+flowchart TD
+    A[Initialize Git] --> B[Initialize DVC]
+    B --> C[Configure Python Environment]
+    C --> D[Create dvc.yaml]
+    D --> E[Run dvc repro]
+    E --> F[Visualize with dvc dag]
+    F --> G[Check Metrics]
+    G --> H[Commit Changes to Git]
+```
+
+### 4. Pipeline Metrics
+
+After running the pipeline, inspect the model evaluation metrics:
+
+```bash
+dvc metrics show
+```
+
+Example metrics you might track include accuracy, precision, recall, and F1-score. Actual values will depend on your model and dataset.
 
 ## 🚀 Project Overview
 
