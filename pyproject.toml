@@ -1,0 +1,26 @@
+[project]
+name = "ml-pipeline-dvc"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "SubhasishElixor-HQ", email = "subhasishshoo4747@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "dvc",
+    "nltk",
+    "numpy",
+    "pandas",
+    "pip",
+    "pyyaml",
+    "scikit-learn",
+    "xgboost",
+]
+
+[project.scripts]
+ml-pipeline-dvc = "ml_pipeline_dvc:main"
+
+[build-system]
+requires = ["uv_build>=0.12.23,<0.13.0"]
+build-backend = "uv_build"
